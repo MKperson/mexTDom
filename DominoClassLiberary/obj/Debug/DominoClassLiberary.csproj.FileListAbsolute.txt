@@ -1,0 +1,12 @@
+E:\234N\MexicanTrainDominos\DominoClassLiberary\bin\Debug\DominoClassLiberary.dll
+E:\234N\MexicanTrainDominos\DominoClassLiberary\bin\Debug\DominoClassLiberary.pdb
+E:\234N\MexicanTrainDominos\DominoClassLiberary\obj\Debug\DominoClassLiberary.csproj.CoreCompileInputs.cache
+E:\234N\MexicanTrainDominos\DominoClassLiberary\obj\Debug\DominoClassLiberary.dll
+E:\234N\MexicanTrainDominos\DominoClassLiberary\obj\Debug\DominoClassLiberary.pdb
+K:\234N\MexicanTrainDominos\DominoClassLiberary\bin\Debug\DominoClassLiberary.dll
+K:\234N\MexicanTrainDominos\DominoClassLiberary\bin\Debug\DominoClassLiberary.pdb
+K:\234N\MexicanTrainDominos\DominoClassLiberary\obj\Debug\DominoClassLiberary.csprojResolveAssemblyReference.cache
+K:\234N\MexicanTrainDominos\DominoClassLiberary\obj\Debug\DominoClassLiberary.csproj.CoreCompileInputs.cache
+K:\234N\MexicanTrainDominos\DominoClassLiberary\obj\Debug\DominoClassLiberary.dll
+K:\234N\MexicanTrainDominos\DominoClassLiberary\obj\Debug\DominoClassLiberary.pdb
+E:\234N\MexicanTrainDominos\DominoClassLiberary\obj\Debug\DominoClassLiberary.csprojResolveAssemblyReference.cache
