@@ -10,3 +10,9 @@ K:\234N\MexicanTrainDominos\DominoClassLiberary\obj\Debug\DominoClassLiberary.cs
 K:\234N\MexicanTrainDominos\DominoClassLiberary\obj\Debug\DominoClassLiberary.dll
 K:\234N\MexicanTrainDominos\DominoClassLiberary\obj\Debug\DominoClassLiberary.pdb
 E:\234N\MexicanTrainDominos\DominoClassLiberary\obj\Debug\DominoClassLiberary.csprojResolveAssemblyReference.cache
+C:\Users\m_kve\Source\Repos\mexTDom\DominoClassLiberary\bin\Debug\DominoClassLiberary.dll
+C:\Users\m_kve\Source\Repos\mexTDom\DominoClassLiberary\bin\Debug\DominoClassLiberary.pdb
+C:\Users\m_kve\Source\Repos\mexTDom\DominoClassLiberary\obj\Debug\DominoClassLiberary.csprojAssemblyReference.cache
+C:\Users\m_kve\Source\Repos\mexTDom\DominoClassLiberary\obj\Debug\DominoClassLiberary.csproj.CoreCompileInputs.cache
+C:\Users\m_kve\Source\Repos\mexTDom\DominoClassLiberary\obj\Debug\DominoClassLiberary.dll
+C:\Users\m_kve\Source\Repos\mexTDom\DominoClassLiberary\obj\Debug\DominoClassLiberary.pdb
