@@ -1,0 +1,13 @@
+C:\Users\m_kve\source\repos\mexTDom\MTDUserInterfaceStart\obj\Debug\MTDUserInterface.csprojAssemblyReference.cache
+C:\Users\m_kve\source\repos\mexTDom\MTDUserInterfaceStart\obj\Debug\MTDUserInterface.PlayMTDRightClick.resources
+C:\Users\m_kve\source\repos\mexTDom\MTDUserInterfaceStart\obj\Debug\MTDUserInterface.Properties.Resources.resources
+C:\Users\m_kve\source\repos\mexTDom\MTDUserInterfaceStart\obj\Debug\MTDUserInterface.csproj.GenerateResource.cache
+C:\Users\m_kve\source\repos\mexTDom\MTDUserInterfaceStart\obj\Debug\MTDUserInterface.csproj.CoreCompileInputs.cache
+C:\Users\m_kve\source\repos\mexTDom\MTDUserInterfaceStart\bin\Debug\MTDUserInterface.exe.config
+C:\Users\m_kve\source\repos\mexTDom\MTDUserInterfaceStart\bin\Debug\MTDUserInterface.exe
+C:\Users\m_kve\source\repos\mexTDom\MTDUserInterfaceStart\bin\Debug\MTDUserInterface.pdb
+C:\Users\m_kve\source\repos\mexTDom\MTDUserInterfaceStart\bin\Debug\DominoClassLiberary.dll
+C:\Users\m_kve\source\repos\mexTDom\MTDUserInterfaceStart\bin\Debug\DominoClassLiberary.pdb
+C:\Users\m_kve\source\repos\mexTDom\MTDUserInterfaceStart\obj\Debug\MTDUserInterface.csproj.CopyComplete
+C:\Users\m_kve\source\repos\mexTDom\MTDUserInterfaceStart\obj\Debug\MTDUserInterface.exe
+C:\Users\m_kve\source\repos\mexTDom\MTDUserInterfaceStart\obj\Debug\MTDUserInterface.pdb

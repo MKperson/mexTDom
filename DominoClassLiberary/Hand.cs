@@ -9,7 +9,7 @@ namespace DominoClassLiberary
 {
     public class Hand
     {
-        private List<Domino> listOfDominos;
+        public List<Domino> listOfDominos;
 
         public List<Domino> Dominos
         {

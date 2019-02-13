@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace DominoClassLiberary
 {
-    class PrivateTrain : MainTrain
+    public class PrivateTrain : MainTrain
     {
-        Hand hand;
+        //Hand hand;
         bool isOpen;
 
         bool IsOpen
