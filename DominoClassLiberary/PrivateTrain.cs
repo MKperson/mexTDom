@@ -8,10 +8,10 @@ namespace DominoClassLiberary
 {
     public class PrivateTrain : MainTrain
     {
-        //Hand hand;
-        bool isOpen;
+        Hand hand;
+        bool isOpen = false;
 
-        bool IsOpen
+        public bool IsOpen
         {
             get
             {
@@ -19,9 +19,9 @@ namespace DominoClassLiberary
             }
         }
 
-        public PrivateTrain(Hand h, int engValue):base(engValue)
+        public PrivateTrain(Hand h, int engValue) : base(engValue)
         {
-
+            hand = h;
         }
         public void Open()
         {
@@ -31,6 +31,52 @@ namespace DominoClassLiberary
         {
             isOpen = false;
         }
-        
+       
+        public bool IsPlayable(Hand h, Domino d, out bool mustFlip)
+        {
+
+            if (h == hand)
+            {
+                if (d.Side1 == PlayableValue)
+                {
+                    mustFlip = false;
+                    return true;
+                }
+                else if (d.Side2 == PlayableValue)
+                {
+                    mustFlip = true;
+                    return true;
+                }
+                else
+                {
+                    mustFlip = false;
+                    return false;
+                }
+
+            }
+            else if(IsOpen)
+            {
+                if (d.Side1 == PlayableValue)
+                {
+                    mustFlip = false;
+                    return true;
+                }
+                else if (d.Side2 == PlayableValue)
+                {
+                    mustFlip = true;
+                    return true;
+                }
+                else
+                {
+                    mustFlip = false;
+                    return false;
+                }
+            }
+            else
+            {
+                mustFlip = false;
+                return false;
+            }
+        }
     }
 }

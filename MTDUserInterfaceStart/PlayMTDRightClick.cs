@@ -19,9 +19,12 @@ namespace MTDUserInterface
         MainTrain maintrain;
         PrivateTrain computerTrain, playerTrain;
         List<PictureBox> pictureBoxes = new List<PictureBox>();
-		
-		#endregion
-		
+        int indexOfDominoInPlay = -1;
+        Domino userDominoInPlay = null;
+
+
+        #endregion
+
         #region Methods
 
         // loads the image of a domino into a picture box
@@ -96,13 +99,13 @@ namespace MTDUserInterface
             PictureBox pB = pBs[index];
             pB.Image = null;
         }
-		
-		// removes a picture box from the form dynamically
-		public void RemovePBFromForm(PictureBox pb)
-		{
-			this.Controls.Remove(pb);
+
+        // removes a picture box from the form dynamically
+        public void RemovePBFromForm(PictureBox pb)
+        {
+            this.Controls.Remove(pb);
             pb = null;
-		}
+        }
 
         // plays a domino on a train.  Loads the appropriate train pb, 
         // removes the domino pb from the hand, updates the train status label ,
@@ -126,7 +129,7 @@ namespace MTDUserInterface
         // returns false
         public bool MakeComputerMove(bool canDraw)
         {
-			return true;
+            return true;
         }
 
         // update labels on the UI and disable the users hand
@@ -152,8 +155,40 @@ namespace MTDUserInterface
         // update the labels on the UI
         // if it's the computer's turn, let her play
         // if it's the user's turn, enable the pbs so she can play
+        public Domino biggestDomino(Hand h, out int index)
+        {
+            int count = -1;
+            index = -1;
+            Domino biggestdom = null;
+            foreach (Domino domino in h.Dominos)
+            {
+                count += 1;
+                if (domino.IsDouble())
+                {
+                    if (biggestdom != null)
+                    {
+                        if (domino.Side1 > biggestdom.Side1)
+                        {
+                            index = count;
+                            biggestdom = domino;
+
+                        }
+                    }
+                    else
+                    {
+                        index = count;
+                        biggestdom = domino;
+                    }
+                }
+            }
+
+            return biggestdom;
+
+        }
         public void SetUp()
         {
+            Domino biggestdomino = null;
+            EnableUserMove();
             boneYard = new BoneYard(9);
             boneYard.Shuffle();
             player = new Hand(boneYard);
@@ -162,12 +197,95 @@ namespace MTDUserInterface
                 PictureBox temp = CreateUserHandPB(i);
                 pictureBoxes.Add(temp);
                 LoadDomino(temp, player.listOfDominos[i]);
-                
-            }
-                LoadHand(pictureBoxes,player);
-            
-        }
 
+            }
+            computer = new Hand(boneYard);
+            int index;
+            int caseSwitch = -1;
+            Domino pldom = biggestDomino(player, out index);
+            Domino comdom = biggestDomino(computer, out index);
+            if (pldom == null && comdom == null)
+            {
+                caseSwitch = 1;
+            }
+            else if (pldom == null)
+            {
+                caseSwitch = 2;
+            }
+            else if (comdom == null)
+            {
+                caseSwitch = 3;
+            }
+
+            switch (caseSwitch)
+            {
+                case 1:
+                    biggestdomino = null;
+                    break;
+                case 2:
+                    biggestdomino = comdom;
+                    computer.listOfDominos.Remove(biggestdomino);
+                    break;
+                case 3:
+                    biggestdomino = pldom;
+                    //indexOfDominoInPlay = index;
+                    player.listOfDominos.Remove(biggestdomino);
+                    //RemovePBFromForm(pictureBoxes[index]);
+                    ReloadPBS();
+                    break;
+                default:
+                    if (pldom.Side1 > comdom.Side1)
+                    {
+                        biggestdomino = pldom;
+                        //indexOfDominoInPlay = index;
+                        player.listOfDominos.Remove(biggestdomino);
+                        //RemovePBFromForm(pictureBoxes[index]);
+                        ReloadPBS();
+                    }
+                    else if (pldom.Side1 < comdom.Side1)
+                    {
+                        biggestdomino = comdom;
+                        computer.listOfDominos.Remove(biggestdomino);
+                    }
+                    else
+                    {
+                        biggestdomino = null;
+                    }
+                    break;
+            }
+
+            
+
+            if (biggestdomino == null)
+            {
+                TearDown();
+                SetUp();
+            }
+            else
+            {
+                maintrain = new MainTrain(biggestdomino.Side1);
+                playerTrain = new PrivateTrain(player, biggestdomino.Side1);
+                computerTrain = new PrivateTrain(computer, biggestdomino.Side1);
+                LoadDomino(enginePB, biggestdomino);
+            }
+            EnableUserHandPBs(pictureBoxes);
+
+        }
+        public void ReloadPBS()
+        {
+            for (int i = 0; i < pictureBoxes.Count(); i++)
+            {
+                RemovePBFromForm(pictureBoxes[i]);
+            }
+            pictureBoxes = new List<PictureBox>();
+            for (int i = 0; i < player.listOfDominos.Count(); i++)
+            {
+                PictureBox temp = CreateUserHandPB(i);
+                pictureBoxes.Add(temp);
+                LoadDomino(temp, player.listOfDominos[i]);
+
+            }
+        }
         // remove all of the domino pictures for each train
         // remove all of the domino pictures for the user's hand
         // reset the nextDrawIndex to 15
@@ -180,7 +298,7 @@ namespace MTDUserInterface
             player = null;
             //pictureBoxes = null;
             pictureBoxes = new List<PictureBox>();
-            
+
         }
         #endregion
 
@@ -189,6 +307,7 @@ namespace MTDUserInterface
         {
             InitializeComponent();
             SetUp();
+
         }
 
         // when the user right clicks on a domino, a context sensitive menu appears that
@@ -196,15 +315,17 @@ namespace MTDUserInterface
         // the event handler for the menu item is enabled and disabled appropriately.
         private void whichTrainMenu_Opening(object sender, CancelEventArgs e)
         {
-			/*
+
+
             bool mustFlip = false;
             if (userDominoInPlay != null)
             {
                 mexicanTrainItem.Click -= new System.EventHandler(this.mexicanTrainItem_Click);
                 computerTrainItem.Click -= new System.EventHandler(this.computerTrainItem_Click);
                 myTrainItem.Click -= new System.EventHandler(this.myTrainItem_Click);
+                Hand userHand = player;
 
-                if (mexicanTrain.IsPlayable(userHand, userDominoInPlay, out mustFlip))
+                if (maintrain.IsPlayable(/*userHand,*/ userDominoInPlay, out mustFlip))
                 {
                     mexicanTrainItem.ForeColor = Color.Green;
                     mexicanTrainItem.Click += new System.EventHandler(this.mexicanTrainItem_Click);
@@ -212,7 +333,7 @@ namespace MTDUserInterface
                 else
                 {
                     mexicanTrainItem.ForeColor = Color.Red;
-                } 
+                }
                 if (computerTrain.IsPlayable(userHand, userDominoInPlay, out mustFlip))
                 {
                     computerTrainItem.ForeColor = Color.Green;
@@ -222,7 +343,7 @@ namespace MTDUserInterface
                 {
                     computerTrainItem.ForeColor = Color.Red;
                 }
-                if (userTrain.IsPlayable(userHand, userDominoInPlay, out mustFlip))
+                if (playerTrain.IsPlayable(userHand, userDominoInPlay, out mustFlip))
                 {
                     myTrainItem.ForeColor = Color.Green;
                     myTrainItem.Click += new System.EventHandler(this.myTrainItem_Click);
@@ -232,44 +353,59 @@ namespace MTDUserInterface
                     myTrainItem.ForeColor = Color.Red;
                 }
             }
-			*/
+
         }
 
         // displays the context sensitve menu with the list of trains
         // sets the instance variables indexOfDominoInPlay and userDominoInPlay
         private void handPB_MouseDown(object sender, MouseEventArgs e)
         {
-			/*
+
             PictureBox handPB = (PictureBox)sender;
-            indexOfDominoInPlay = userHandPBs.IndexOf(handPB);
+            indexOfDominoInPlay = pictureBoxes.IndexOf(handPB);
             if (indexOfDominoInPlay != -1)
             {
-                userDominoInPlay = userHand[indexOfDominoInPlay];
+                userDominoInPlay = player.listOfDominos[indexOfDominoInPlay];
                 if (e.Button == MouseButtons.Right)
                 {
-                    whichTrainMenu.Show(handPB, 
+                    whichTrainMenu.Show(handPB,
                         handPB.Size.Width - 20, handPB.Size.Height - 20);
                 }
             }
-			*/
+
         }
 
         // play on the mexican train, lets the computer take a move and then enables
         // hand pbs so the user can make the next move.
         private void mexicanTrainItem_Click(object sender, EventArgs e)
         {
+            player.listOfDominos.Remove(userDominoInPlay);
+            LoadDomino(mexTrainPB1, userDominoInPlay);
+            ReloadPBS();
+            EnableUserHandPBs(pictureBoxes);
+
         }
 
         // play on the computer train, lets the computer take a move and then enables
         // hand pbs so the user can make the next move.
         private void computerTrainItem_Click(object sender, EventArgs e)
         {
+            if (computerTrain.IsOpen)
+            {
+                RemovePBFromForm(pictureBoxes[indexOfDominoInPlay]);
+
+                LoadDomino(compTrainPB1, userDominoInPlay);
+            }
         }
 
         // play on the user train, lets the computer take a move and then enables
         // hand pbs so the user can make the next move.
         private void myTrainItem_Click(object sender, EventArgs e)
         {
+            if (playerTrain.IsOpen) {
+                
+            }
+            
         }
 
         // tear down and then set up
@@ -283,14 +419,29 @@ namespace MTDUserInterface
         private void drawButton_Click(object sender, EventArgs e)
         {
             player.Dominos.Add(boneYard.Draw());
-            LoadDomino(CreateUserHandPB(player.listOfDominos.Count() - 1), player.listOfDominos[player.listOfDominos.Count() - 1]);
-            
+            pictureBoxes.Add(CreateUserHandPB(player.listOfDominos.Count() - 1));
+            LoadDomino(pictureBoxes[pictureBoxes.Count() - 1], player.listOfDominos[player.listOfDominos.Count() - 1]);
+            EnableHandPB(pictureBoxes[pictureBoxes.Count() - 1]);
+            /*CreateUserHandPB(player.listOfDominos.Count() - 1)*/
+            playerTrain.Open();
+
         }
 
         // open the user's train, update the ui and let the computer make a move
         // enable the hand pbs so the user can make a move
         private void passButton_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void openOrClose_Click(object sender, EventArgs e)
+        {
+            if (computerTrain.IsOpen)
+            {
+                computerTrain.Close();
+            }
+            else computerTrain.Open();
+
         }
 
         private void PlayMTDRightClick_Load(object sender, EventArgs e)
@@ -298,7 +449,7 @@ namespace MTDUserInterface
             // register the boneyard almost empty event and it's delegate here
         }
 
-		// event handler for handling the boneyard almost empty event
+        // event handler for handling the boneyard almost empty event
         private void RespondToEmpty(BoneYard by)
         {
             MessageBox.Show("The Boneyard must be empty");

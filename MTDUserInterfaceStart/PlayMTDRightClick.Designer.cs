@@ -62,6 +62,7 @@
             this.computerTrainItem = new System.Windows.Forms.ToolStripMenuItem();
             this.myTrainItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newHandButton = new System.Windows.Forms.Button();
+            this.openorclosecomp = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.enginePB)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.compTrainPB5)).BeginInit();
@@ -88,10 +89,9 @@
             // 
             this.userTrainStatusLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.userTrainStatusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userTrainStatusLabel.Location = new System.Drawing.Point(788, 286);
-            this.userTrainStatusLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.userTrainStatusLabel.Location = new System.Drawing.Point(591, 232);
             this.userTrainStatusLabel.Name = "userTrainStatusLabel";
-            this.userTrainStatusLabel.Size = new System.Drawing.Size(173, 30);
+            this.userTrainStatusLabel.Size = new System.Drawing.Size(130, 25);
             this.userTrainStatusLabel.TabIndex = 29;
             this.userTrainStatusLabel.Text = "Open Or Closed";
             this.userTrainStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -100,10 +100,9 @@
             // 
             this.computerTrainStatusLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.computerTrainStatusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.computerTrainStatusLabel.Location = new System.Drawing.Point(788, 169);
-            this.computerTrainStatusLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.computerTrainStatusLabel.Location = new System.Drawing.Point(591, 137);
             this.computerTrainStatusLabel.Name = "computerTrainStatusLabel";
-            this.computerTrainStatusLabel.Size = new System.Drawing.Size(173, 30);
+            this.computerTrainStatusLabel.Size = new System.Drawing.Size(130, 25);
             this.computerTrainStatusLabel.TabIndex = 28;
             this.computerTrainStatusLabel.Text = "Open Or Closed";
             this.computerTrainStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -111,10 +110,9 @@
             // passButton
             // 
             this.passButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passButton.Location = new System.Drawing.Point(915, 466);
-            this.passButton.Margin = new System.Windows.Forms.Padding(4);
+            this.passButton.Location = new System.Drawing.Point(686, 379);
             this.passButton.Name = "passButton";
-            this.passButton.Size = new System.Drawing.Size(133, 39);
+            this.passButton.Size = new System.Drawing.Size(100, 32);
             this.passButton.TabIndex = 27;
             this.passButton.Text = "Pass";
             this.passButton.UseVisualStyleBackColor = true;
@@ -123,10 +121,9 @@
             // drawButton
             // 
             this.drawButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.drawButton.Location = new System.Drawing.Point(916, 420);
-            this.drawButton.Margin = new System.Windows.Forms.Padding(4);
+            this.drawButton.Location = new System.Drawing.Point(687, 341);
             this.drawButton.Name = "drawButton";
-            this.drawButton.Size = new System.Drawing.Size(133, 39);
+            this.drawButton.Size = new System.Drawing.Size(100, 32);
             this.drawButton.TabIndex = 26;
             this.drawButton.Text = "Draw";
             this.drawButton.UseVisualStyleBackColor = true;
@@ -136,10 +133,9 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(32, 420);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(24, 341);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(192, 25);
+            this.label5.Size = new System.Drawing.Size(152, 20);
             this.label5.TabIndex = 25;
             this.label5.Text = "Pesky Player\'s Hand";
             // 
@@ -147,20 +143,18 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(912, 14);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(684, 11);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(145, 25);
+            this.label4.Size = new System.Drawing.Size(119, 20);
             this.label4.TabIndex = 24;
             this.label4.Text = "Highest Double";
             // 
             // enginePB
             // 
             this.enginePB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.enginePB.Location = new System.Drawing.Point(916, 42);
-            this.enginePB.Margin = new System.Windows.Forms.Padding(4);
+            this.enginePB.Location = new System.Drawing.Point(687, 34);
             this.enginePB.Name = "enginePB";
-            this.enginePB.Size = new System.Drawing.Size(133, 61);
+            this.enginePB.Size = new System.Drawing.Size(100, 50);
             this.enginePB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.enginePB.TabIndex = 23;
             this.enginePB.TabStop = false;
@@ -168,10 +162,9 @@
             // userLabel
             // 
             this.userLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userLabel.Location = new System.Drawing.Point(32, 238);
-            this.userLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.userLabel.Location = new System.Drawing.Point(24, 193);
             this.userLabel.Name = "userLabel";
-            this.userLabel.Size = new System.Drawing.Size(283, 25);
+            this.userLabel.Size = new System.Drawing.Size(212, 20);
             this.userLabel.TabIndex = 22;
             this.userLabel.Text = "Pesky Player\'s Train";
             // 
@@ -190,22 +183,20 @@
             this.tableLayoutPanel3.Controls.Add(this.compTrainPB2, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.compTrainPB3, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.compTrainPB1, 0, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(32, 150);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(24, 122);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(725, 71);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(544, 58);
             this.tableLayoutPanel3.TabIndex = 21;
             // 
             // compTrainPB5
             // 
             this.compTrainPB5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.compTrainPB5.Location = new System.Drawing.Point(581, 5);
-            this.compTrainPB5.Margin = new System.Windows.Forms.Padding(4);
+            this.compTrainPB5.Location = new System.Drawing.Point(436, 4);
             this.compTrainPB5.Name = "compTrainPB5";
-            this.compTrainPB5.Size = new System.Drawing.Size(133, 61);
+            this.compTrainPB5.Size = new System.Drawing.Size(100, 50);
             this.compTrainPB5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.compTrainPB5.TabIndex = 9;
             this.compTrainPB5.TabStop = false;
@@ -213,10 +204,9 @@
             // compTrainPB4
             // 
             this.compTrainPB4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.compTrainPB4.Location = new System.Drawing.Point(437, 5);
-            this.compTrainPB4.Margin = new System.Windows.Forms.Padding(4);
+            this.compTrainPB4.Location = new System.Drawing.Point(328, 4);
             this.compTrainPB4.Name = "compTrainPB4";
-            this.compTrainPB4.Size = new System.Drawing.Size(133, 61);
+            this.compTrainPB4.Size = new System.Drawing.Size(100, 50);
             this.compTrainPB4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.compTrainPB4.TabIndex = 2;
             this.compTrainPB4.TabStop = false;
@@ -224,10 +214,9 @@
             // compTrainPB2
             // 
             this.compTrainPB2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.compTrainPB2.Location = new System.Drawing.Point(149, 5);
-            this.compTrainPB2.Margin = new System.Windows.Forms.Padding(4);
+            this.compTrainPB2.Location = new System.Drawing.Point(112, 4);
             this.compTrainPB2.Name = "compTrainPB2";
-            this.compTrainPB2.Size = new System.Drawing.Size(133, 61);
+            this.compTrainPB2.Size = new System.Drawing.Size(100, 50);
             this.compTrainPB2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.compTrainPB2.TabIndex = 7;
             this.compTrainPB2.TabStop = false;
@@ -235,10 +224,9 @@
             // compTrainPB3
             // 
             this.compTrainPB3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.compTrainPB3.Location = new System.Drawing.Point(293, 5);
-            this.compTrainPB3.Margin = new System.Windows.Forms.Padding(4);
+            this.compTrainPB3.Location = new System.Drawing.Point(220, 4);
             this.compTrainPB3.Name = "compTrainPB3";
-            this.compTrainPB3.Size = new System.Drawing.Size(133, 61);
+            this.compTrainPB3.Size = new System.Drawing.Size(100, 50);
             this.compTrainPB3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.compTrainPB3.TabIndex = 2;
             this.compTrainPB3.TabStop = false;
@@ -246,10 +234,9 @@
             // compTrainPB1
             // 
             this.compTrainPB1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.compTrainPB1.Location = new System.Drawing.Point(5, 5);
-            this.compTrainPB1.Margin = new System.Windows.Forms.Padding(4);
+            this.compTrainPB1.Location = new System.Drawing.Point(4, 4);
             this.compTrainPB1.Name = "compTrainPB1";
-            this.compTrainPB1.Size = new System.Drawing.Size(133, 61);
+            this.compTrainPB1.Size = new System.Drawing.Size(100, 50);
             this.compTrainPB1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.compTrainPB1.TabIndex = 8;
             this.compTrainPB1.TabStop = false;
@@ -257,20 +244,18 @@
             // computerLabel
             // 
             this.computerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.computerLabel.Location = new System.Drawing.Point(32, 122);
-            this.computerLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.computerLabel.Location = new System.Drawing.Point(24, 99);
             this.computerLabel.Name = "computerLabel";
-            this.computerLabel.Size = new System.Drawing.Size(283, 25);
+            this.computerLabel.Size = new System.Drawing.Size(212, 20);
             this.computerLabel.TabIndex = 20;
             this.computerLabel.Text = "Crafty Computer\'s Train";
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(32, 9);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(24, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(283, 25);
+            this.label1.Size = new System.Drawing.Size(212, 20);
             this.label1.TabIndex = 19;
             this.label1.Text = "Mexican Train";
             // 
@@ -289,22 +274,20 @@
             this.tableLayoutPanel2.Controls.Add(this.mexTrainPB2, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.mexTrainPB4, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.mexTrainPB3, 2, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(32, 37);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(24, 30);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(725, 71);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(544, 58);
             this.tableLayoutPanel2.TabIndex = 18;
             // 
             // mexTrainPB1
             // 
             this.mexTrainPB1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mexTrainPB1.Location = new System.Drawing.Point(5, 5);
-            this.mexTrainPB1.Margin = new System.Windows.Forms.Padding(4);
+            this.mexTrainPB1.Location = new System.Drawing.Point(4, 4);
             this.mexTrainPB1.Name = "mexTrainPB1";
-            this.mexTrainPB1.Size = new System.Drawing.Size(133, 61);
+            this.mexTrainPB1.Size = new System.Drawing.Size(100, 50);
             this.mexTrainPB1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.mexTrainPB1.TabIndex = 4;
             this.mexTrainPB1.TabStop = false;
@@ -312,10 +295,9 @@
             // mexTrainPB5
             // 
             this.mexTrainPB5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mexTrainPB5.Location = new System.Drawing.Point(581, 5);
-            this.mexTrainPB5.Margin = new System.Windows.Forms.Padding(4);
+            this.mexTrainPB5.Location = new System.Drawing.Point(436, 4);
             this.mexTrainPB5.Name = "mexTrainPB5";
-            this.mexTrainPB5.Size = new System.Drawing.Size(133, 61);
+            this.mexTrainPB5.Size = new System.Drawing.Size(100, 50);
             this.mexTrainPB5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.mexTrainPB5.TabIndex = 7;
             this.mexTrainPB5.TabStop = false;
@@ -323,10 +305,9 @@
             // mexTrainPB2
             // 
             this.mexTrainPB2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mexTrainPB2.Location = new System.Drawing.Point(149, 5);
-            this.mexTrainPB2.Margin = new System.Windows.Forms.Padding(4);
+            this.mexTrainPB2.Location = new System.Drawing.Point(112, 4);
             this.mexTrainPB2.Name = "mexTrainPB2";
-            this.mexTrainPB2.Size = new System.Drawing.Size(133, 61);
+            this.mexTrainPB2.Size = new System.Drawing.Size(100, 50);
             this.mexTrainPB2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.mexTrainPB2.TabIndex = 5;
             this.mexTrainPB2.TabStop = false;
@@ -334,10 +315,9 @@
             // mexTrainPB4
             // 
             this.mexTrainPB4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mexTrainPB4.Location = new System.Drawing.Point(437, 5);
-            this.mexTrainPB4.Margin = new System.Windows.Forms.Padding(4);
+            this.mexTrainPB4.Location = new System.Drawing.Point(328, 4);
             this.mexTrainPB4.Name = "mexTrainPB4";
-            this.mexTrainPB4.Size = new System.Drawing.Size(133, 61);
+            this.mexTrainPB4.Size = new System.Drawing.Size(100, 50);
             this.mexTrainPB4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.mexTrainPB4.TabIndex = 6;
             this.mexTrainPB4.TabStop = false;
@@ -345,10 +325,9 @@
             // mexTrainPB3
             // 
             this.mexTrainPB3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mexTrainPB3.Location = new System.Drawing.Point(293, 5);
-            this.mexTrainPB3.Margin = new System.Windows.Forms.Padding(4);
+            this.mexTrainPB3.Location = new System.Drawing.Point(220, 4);
             this.mexTrainPB3.Name = "mexTrainPB3";
-            this.mexTrainPB3.Size = new System.Drawing.Size(133, 61);
+            this.mexTrainPB3.Size = new System.Drawing.Size(100, 50);
             this.mexTrainPB3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.mexTrainPB3.TabIndex = 4;
             this.mexTrainPB3.TabStop = false;
@@ -368,22 +347,20 @@
             this.tableLayoutPanel1.Controls.Add(this.userTrainPB2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.userTrainPB4, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.userTrainPB5, 4, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(32, 266);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(24, 216);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(725, 71);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(544, 58);
             this.tableLayoutPanel1.TabIndex = 17;
             // 
             // userTrainPB3
             // 
             this.userTrainPB3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.userTrainPB3.Location = new System.Drawing.Point(293, 5);
-            this.userTrainPB3.Margin = new System.Windows.Forms.Padding(4);
+            this.userTrainPB3.Location = new System.Drawing.Point(220, 4);
             this.userTrainPB3.Name = "userTrainPB3";
-            this.userTrainPB3.Size = new System.Drawing.Size(133, 61);
+            this.userTrainPB3.Size = new System.Drawing.Size(100, 50);
             this.userTrainPB3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.userTrainPB3.TabIndex = 10;
             this.userTrainPB3.TabStop = false;
@@ -391,10 +368,9 @@
             // userTrainPB1
             // 
             this.userTrainPB1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.userTrainPB1.Location = new System.Drawing.Point(5, 5);
-            this.userTrainPB1.Margin = new System.Windows.Forms.Padding(4);
+            this.userTrainPB1.Location = new System.Drawing.Point(4, 4);
             this.userTrainPB1.Name = "userTrainPB1";
-            this.userTrainPB1.Size = new System.Drawing.Size(133, 61);
+            this.userTrainPB1.Size = new System.Drawing.Size(100, 50);
             this.userTrainPB1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.userTrainPB1.TabIndex = 4;
             this.userTrainPB1.TabStop = false;
@@ -402,10 +378,9 @@
             // userTrainPB2
             // 
             this.userTrainPB2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.userTrainPB2.Location = new System.Drawing.Point(149, 5);
-            this.userTrainPB2.Margin = new System.Windows.Forms.Padding(4);
+            this.userTrainPB2.Location = new System.Drawing.Point(112, 4);
             this.userTrainPB2.Name = "userTrainPB2";
-            this.userTrainPB2.Size = new System.Drawing.Size(133, 61);
+            this.userTrainPB2.Size = new System.Drawing.Size(100, 50);
             this.userTrainPB2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.userTrainPB2.TabIndex = 2;
             this.userTrainPB2.TabStop = false;
@@ -413,10 +388,9 @@
             // userTrainPB4
             // 
             this.userTrainPB4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.userTrainPB4.Location = new System.Drawing.Point(437, 5);
-            this.userTrainPB4.Margin = new System.Windows.Forms.Padding(4);
+            this.userTrainPB4.Location = new System.Drawing.Point(328, 4);
             this.userTrainPB4.Name = "userTrainPB4";
-            this.userTrainPB4.Size = new System.Drawing.Size(133, 61);
+            this.userTrainPB4.Size = new System.Drawing.Size(100, 50);
             this.userTrainPB4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.userTrainPB4.TabIndex = 7;
             this.userTrainPB4.TabStop = false;
@@ -424,10 +398,9 @@
             // userTrainPB5
             // 
             this.userTrainPB5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.userTrainPB5.Location = new System.Drawing.Point(581, 5);
-            this.userTrainPB5.Margin = new System.Windows.Forms.Padding(4);
+            this.userTrainPB5.Location = new System.Drawing.Point(436, 4);
             this.userTrainPB5.Name = "userTrainPB5";
-            this.userTrainPB5.Size = new System.Drawing.Size(133, 61);
+            this.userTrainPB5.Size = new System.Drawing.Size(100, 50);
             this.userTrainPB5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.userTrainPB5.TabIndex = 6;
             this.userTrainPB5.TabStop = false;
@@ -440,7 +413,7 @@
             this.computerTrainItem,
             this.myTrainItem});
             this.whichTrainMenu.Name = "whichTrainMenu";
-            this.whichTrainMenu.Size = new System.Drawing.Size(229, 100);
+            this.whichTrainMenu.Size = new System.Drawing.Size(197, 82);
             this.whichTrainMenu.Opening += new System.ComponentModel.CancelEventHandler(this.whichTrainMenu_Opening);
             // 
             // mexicanTrainItem
@@ -448,7 +421,7 @@
             this.mexicanTrainItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.mexicanTrainItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mexicanTrainItem.Name = "mexicanTrainItem";
-            this.mexicanTrainItem.Size = new System.Drawing.Size(228, 32);
+            this.mexicanTrainItem.Size = new System.Drawing.Size(196, 26);
             this.mexicanTrainItem.Text = "Mexican Train";
             this.mexicanTrainItem.Click += new System.EventHandler(this.mexicanTrainItem_Click);
             // 
@@ -457,7 +430,7 @@
             this.computerTrainItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.computerTrainItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.computerTrainItem.Name = "computerTrainItem";
-            this.computerTrainItem.Size = new System.Drawing.Size(228, 32);
+            this.computerTrainItem.Size = new System.Drawing.Size(196, 26);
             this.computerTrainItem.Text = "Computer\'s Train";
             this.computerTrainItem.ToolTipText = "Computer\'s Train";
             this.computerTrainItem.Click += new System.EventHandler(this.computerTrainItem_Click);
@@ -466,27 +439,38 @@
             // 
             this.myTrainItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.myTrainItem.Name = "myTrainItem";
-            this.myTrainItem.Size = new System.Drawing.Size(228, 32);
+            this.myTrainItem.Size = new System.Drawing.Size(196, 26);
             this.myTrainItem.Text = "My Train";
             this.myTrainItem.Click += new System.EventHandler(this.myTrainItem_Click);
             // 
             // newHandButton
             // 
             this.newHandButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newHandButton.Location = new System.Drawing.Point(915, 554);
-            this.newHandButton.Margin = new System.Windows.Forms.Padding(4);
+            this.newHandButton.Location = new System.Drawing.Point(686, 450);
             this.newHandButton.Name = "newHandButton";
-            this.newHandButton.Size = new System.Drawing.Size(133, 39);
+            this.newHandButton.Size = new System.Drawing.Size(100, 32);
             this.newHandButton.TabIndex = 30;
             this.newHandButton.Text = "New Hand";
             this.newHandButton.UseVisualStyleBackColor = true;
             this.newHandButton.Click += new System.EventHandler(this.newHandButton_Click);
             // 
+            // openorclosecomp
+            // 
+            this.openorclosecomp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.openorclosecomp.Location = new System.Drawing.Point(664, 522);
+            this.openorclosecomp.Name = "openorclosecomp";
+            this.openorclosecomp.Size = new System.Drawing.Size(139, 57);
+            this.openorclosecomp.TabIndex = 31;
+            this.openorclosecomp.Text = "open or close comp train";
+            this.openorclosecomp.UseVisualStyleBackColor = true;
+            this.openorclosecomp.Click += new System.EventHandler(this.openOrClose_Click);
+            // 
             // PlayMTDRightClick
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1132, 746);
+            this.ClientSize = new System.Drawing.Size(849, 606);
+            this.Controls.Add(this.openorclosecomp);
             this.Controls.Add(this.newHandButton);
             this.Controls.Add(this.userTrainStatusLabel);
             this.Controls.Add(this.computerTrainStatusLabel);
@@ -501,7 +485,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PlayMTDRightClick";
             this.Text = "PlayMTDRightClick";
             this.Load += new System.EventHandler(this.PlayMTDRightClick_Load);
@@ -565,5 +548,6 @@
         private System.Windows.Forms.ToolStripMenuItem computerTrainItem;
         private System.Windows.Forms.ToolStripMenuItem myTrainItem;
         private System.Windows.Forms.Button newHandButton;
+        private System.Windows.Forms.Button openorclosecomp;
     }
 }
