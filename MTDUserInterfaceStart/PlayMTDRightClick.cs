@@ -21,6 +21,9 @@ namespace MTDUserInterface
         List<PictureBox> pictureBoxes = new List<PictureBox>();
         int indexOfDominoInPlay = -1;
         Domino userDominoInPlay = null;
+        List<PictureBox> mextrainpbs = new List<PictureBox>();
+        List<PictureBox> playertrainpbs = new List<PictureBox>();
+        List<PictureBox> comptrainpbs = new List<PictureBox>();
 
 
         #endregion
@@ -112,6 +115,64 @@ namespace MTDUserInterface
         // disables the hand pbs and disables appropriate buttons
         public void UserPlayOnTrain(Domino d, MainTrain train, List<PictureBox> trainPBs)
         {
+            bool pbfilled = false;
+            bool mustFlip;
+            train.IsPlayable(d, out mustFlip);
+            train.Play(d);
+            player.listOfDominos.Remove(d);
+
+            foreach (PictureBox pb in trainPBs)
+            {
+                if (pb.Image == null)
+                {
+                    LoadDomino(pb, d);
+                    if(mustFlip == true)
+                    {
+                        PictureBox temp = new PictureBox();
+                        temp.Image = pb.Image;
+                        temp.Image.RotateFlip(RotateFlipType.RotateNoneFlipY);
+                        pb.Image = temp.Image;
+                        mustFlip = false;
+                    }
+                    break;
+                }
+                if (trainPBs.IndexOf(pb)== 4)
+                {
+                    pbfilled = true;
+                }
+                
+                
+            }
+            foreach (PictureBox pb in trainPBs)
+            { 
+                
+                if (pbfilled== true)
+                {
+                    int index = trainPBs.IndexOf(pb);
+                    if (index == 4)
+                    {
+                        LoadDomino(pb, d);
+                        if (mustFlip == true)
+                        {
+                            PictureBox temp = new PictureBox();
+                            temp.Image = pb.Image;
+                            temp.Image.RotateFlip(RotateFlipType.RotateNoneFlipY);
+                            pb.Image = temp.Image;
+                            mustFlip = false;
+                        }
+                        break;
+                    }
+                    else
+                    {
+                        pb.Image = trainPBs[index + 1].Image;
+                        
+                    }
+                    
+                }
+            }
+            
+                ReloadPBS();
+            EnableUserHandPBs(pictureBoxes);
         }
 
         // adds a domino picture to a train
@@ -143,6 +204,7 @@ namespace MTDUserInterface
         // enable the hand pbs, buttons and update labels on the UI
         public void EnableUserMove()
         {
+            EnableUserHandPBs(pictureBoxes);
         }
 
         // instantiate boneyard and hands
@@ -185,8 +247,16 @@ namespace MTDUserInterface
             return biggestdom;
 
         }
+        public void PopulateTrainPBS()
+        {
+            mextrainpbs.Add(mexTrainPB1); mextrainpbs.Add(mexTrainPB2); mextrainpbs.Add(mexTrainPB3); mextrainpbs.Add(mexTrainPB4); mextrainpbs.Add(mexTrainPB5);
+            playertrainpbs.Add(userTrainPB1); playertrainpbs.Add(userTrainPB2); playertrainpbs.Add(userTrainPB3); playertrainpbs.Add(userTrainPB4); playertrainpbs.Add(userTrainPB5);
+            comptrainpbs.Add(compTrainPB1); comptrainpbs.Add(compTrainPB2); comptrainpbs.Add(compTrainPB3); comptrainpbs.Add(compTrainPB4); comptrainpbs.Add(compTrainPB5);
+        }
         public void SetUp()
         {
+            PopulateTrainPBS();
+            
             Domino biggestdomino = null;
             EnableUserMove();
             boneYard = new BoneYard(9);
@@ -379,10 +449,13 @@ namespace MTDUserInterface
         // hand pbs so the user can make the next move.
         private void mexicanTrainItem_Click(object sender, EventArgs e)
         {
-            player.listOfDominos.Remove(userDominoInPlay);
-            LoadDomino(mexTrainPB1, userDominoInPlay);
-            ReloadPBS();
-            EnableUserHandPBs(pictureBoxes);
+            UserPlayOnTrain(userDominoInPlay, maintrain, mextrainpbs);
+           // maintrain.Play(userDominoInPlay);
+            //player.listOfDominos.Remove(userDominoInPlay);
+            
+            //LoadDomino(mexTrainPB1, userDominoInPlay);
+            //ReloadPBS();
+            //EnableUserHandPBs(pictureBoxes);
 
         }
 
@@ -392,9 +465,7 @@ namespace MTDUserInterface
         {
             if (computerTrain.IsOpen)
             {
-                RemovePBFromForm(pictureBoxes[indexOfDominoInPlay]);
-
-                LoadDomino(compTrainPB1, userDominoInPlay);
+                UserPlayOnTrain(userDominoInPlay, computerTrain, comptrainpbs);
             }
         }
 
@@ -405,7 +476,7 @@ namespace MTDUserInterface
             if (playerTrain.IsOpen) {
                 
             }
-            
+            UserPlayOnTrain(userDominoInPlay, playerTrain, playertrainpbs);
         }
 
         // tear down and then set up
