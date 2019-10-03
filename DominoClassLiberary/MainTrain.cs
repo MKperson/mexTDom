@@ -122,8 +122,12 @@ namespace DominoClassLiberary
 
         public override string ToString()
         {
-            
-            return dominos.ToString();
+            string s = "";
+            foreach (Domino d in dominos)
+            {
+                s += d.ToString();
+            }
+            return s;
         }
 
 
