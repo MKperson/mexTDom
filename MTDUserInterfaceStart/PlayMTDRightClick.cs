@@ -430,7 +430,11 @@ namespace MTDUserInterface
         // sets the instance variables indexOfDominoInPlay and userDominoInPlay
         private void handPB_MouseDown(object sender, MouseEventArgs e)
         {
-
+            if (boneYard.DominosRemaining == 0)
+            {
+                drawButton.Enabled = false;
+                passButton.Enabled = true;
+            }
             PictureBox handPB = (PictureBox)sender;
             indexOfDominoInPlay = pictureBoxes.IndexOf(handPB);
             if (indexOfDominoInPlay != -1)
@@ -495,6 +499,11 @@ namespace MTDUserInterface
             EnableHandPB(pictureBoxes[pictureBoxes.Count() - 1]);
             /*CreateUserHandPB(player.listOfDominos.Count() - 1)*/
             playerTrain.Open();
+            if (boneYard.DominosRemaining == 0)
+            {
+                drawButton.Enabled = false;
+                passButton.Enabled = true;
+            }
 
         }
 
@@ -517,6 +526,7 @@ namespace MTDUserInterface
 
         private void PlayMTDRightClick_Load(object sender, EventArgs e)
         {
+            passButton.Enabled = false;
             // register the boneyard almost empty event and it's delegate here
         }
 
